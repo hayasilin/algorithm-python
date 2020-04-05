@@ -1,3 +1,19 @@
+import sys
+
+# Solution 1
+def permutations(line, result):
+    if len(line) <= 0:
+        print(result)
+    tmp = result
+    for i in range(0, len(line)):
+        tmp = result + line[i]
+        permutations(line[:i] + line[(i+1):], tmp)
+
+# line = sys.stdin.readline()
+# permutations(line, "")
+permutations(["a", "b", "c"], "")
+
+# Solution 2
 def permutation(lst):
     if len(lst) == 0:
         return []
@@ -16,22 +32,22 @@ def permutation(lst):
             result.append([m] + p)
             print("result= ", result)
 
-    
     return result
 
 if __name__ == '__main__':
     permutation([1,2,3])
 
-
-
-def permute(self, nums):
+# Solution 3
+def permute(nums):
         result = []
-        self.dfs(nums, result, [])
+        dfs(nums, result, [])
         return result
     
-def dfs(self, nums, result, path):
+def dfs(nums, result, path):
     if not nums:
         result.append(path)
     else:
         for i in range(len(nums)):
-            self.dfs(nums[:i] + nums[i + 1:], result, path + [nums[i]])
+            dfs(nums[:i] + nums[i + 1:], result, path + [nums[i]])
+
+print(permute([1,2,3]))
