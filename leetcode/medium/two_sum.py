@@ -1,5 +1,3 @@
-
-
 class Solution:
 	def two_sum_fast(self, nums: [int], target: int) -> [int]:
 	        map = {}
@@ -17,7 +15,6 @@ class Solution:
 	                return [map[target-nums[i]], i]
 	            
 	            map[nums[i]] = i
-
 
 import unittest
 
@@ -37,7 +34,6 @@ class SolutionTest(unittest.TestCase):
 		expected = [0, 1]
 		result = self.solution.two_sum_slow([2, 7, 8, 9], 9)
 		self.assertEqual(result, result)
-
 
 if __name__ == '__main__':
     suite = unittest.TestSuite()
